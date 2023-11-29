@@ -7236,19 +7236,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\FPTSHOP\\.nuget\\packages\\": {}
+    "C:\\Users\\ASUS\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\ĐẠI HỌC\\Năm 3\\BCCKTKWNC\\CUOIKYWEBNANGCAO-Yen\\CUOIKYLTWEBNANGCAO\\CUOIKYLTWEBNANGCAO.csproj",
+      "projectUniqueName": "C:\\tkwnc_c#\\btck\\CUOIKYLTWEBNANGCAO\\CUOIKYLTWEBNANGCAO.csproj",
       "projectName": "CUOIKYLTWEBNANGCAO",
-      "projectPath": "D:\\ĐẠI HỌC\\Năm 3\\BCCKTKWNC\\CUOIKYWEBNANGCAO-Yen\\CUOIKYLTWEBNANGCAO\\CUOIKYLTWEBNANGCAO.csproj",
-      "packagesPath": "C:\\Users\\FPTSHOP\\.nuget\\packages\\",
-      "outputPath": "D:\\ĐẠI HỌC\\Năm 3\\BCCKTKWNC\\CUOIKYWEBNANGCAO-Yen\\CUOIKYLTWEBNANGCAO\\obj\\",
+      "projectPath": "C:\\tkwnc_c#\\btck\\CUOIKYLTWEBNANGCAO\\CUOIKYLTWEBNANGCAO.csproj",
+      "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
+      "outputPath": "C:\\tkwnc_c#\\btck\\CUOIKYLTWEBNANGCAO\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\FPTSHOP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

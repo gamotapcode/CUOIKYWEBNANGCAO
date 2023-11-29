@@ -1,0 +1,131 @@
+﻿@using CUOIKYLTWEBNANGCAO.Models
+@using X.PagedList.Mvc.Core;
+@model X.PagedList.IPagedList<TbSanpham>;
+@{
+    ViewData["Title"] = "SanPham";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+<div class="row">
+    <div class="row-timkiem">
+        <div class="flex">
+            <div class="flex trang">
+                <span>Trang</span>
+                <select name="" id="data-trang" onchange="">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                </select>
+            </div>                          <div class="boloc">
+                <span>Loại</span>
+
+                <select name="" id="data-filter" onchange="">
+                    <option value="" selected="true">Tất cả</option>
+                    <option value="7">Bánh</option>
+                    <option value="8">Kẹo</option>
+                    <option value="10">Dầu ăn</option>
+                    <option value="11">Mì</option>
+                    <option value="12">Nước ngọt</option>
+                    <option value="41">asdassssadsad</option>
+                </select>
+                <div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-md-12">
+            <button onclick="" class="btn btn-default pull-right add-row ishover"><a asp-action="ThemSanPham"><i class="fa fa-plus"></i>&nbsp;&nbsp; Thêm loại</a></button>
+</div>
+        <div class="col-md">
+
+            <button onclick="" class="btn btn-default pull-right add-row ishover"><i class="fa fa-plus"></i>&nbsp;&nbsp; Thêm sản phẩm</button>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="row">
+
+    <div class="col-md-12">
+
+        <h1 style="text-align:center">Sản Phẩm</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Tên Sản Phẩm
+                    </th>
+                    <th>
+                        Đơn Giá
+                    </th>
+                    <th>
+                        Số Lượng
+                    </th>
+                    <th>
+                        Hình Ảnh
+                    </th>
+                    <th>
+                        Mô Tả
+                    </th>
+                    <th>
+                        Mã Danh Mục
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Tensanpham)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Dongia)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Soluong)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Hinhanh)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Mota)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Madanhmuc)
+                        </td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.Masanpham">Edit</a> |
+                            <a asp-action="Details" asp-route-id="@item.Masanpham">Details</a> |
+                            <a asp-action="Delete" asp-route-id="@item.Masanpham">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <div class="product__pagination" style="flex: 0 0 100%;">
+            @Html.PagedListPager(Model, page => Url.Action("SanPham", new { page = page }))
+        </div>
+    </div>
+</div>
+<style>
+    .pagination {
+        justify-content: center;
+    }
+
+        .pagination li {
+            margin: 5px;
+        }
+</style>
