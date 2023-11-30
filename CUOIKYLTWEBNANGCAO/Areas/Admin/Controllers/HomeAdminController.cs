@@ -51,5 +51,42 @@ namespace CUOIKYLTWEBNANGCAO.Areas.Admin.Controllers
             }
             return View(sanpham);
         }
+        [Route("SuaSanPham")]
+        [HttpGet]
+        public IActionResult SuaSanPham(int maSanPham)
+        {
+            ViewBag.Madanhmuc = new SelectList(db.TbDanhmucs.ToList(), "Madanhmuc", "Tendanhmuc");
+            var sanPham = db.TbSanphams.Find(maSanPham);
+            return View(sanPham);
+        }
+        [Route("SuaSanPham")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult SuaSanPham(TbSanpham sanpham)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Update(sanpham);
+                db.SaveChanges();
+                return RedirectToAction("SanPham");
+            }
+            return View(sanpham);
+        }
+        [Route("XoaSanPham")]
+        [HttpGet]
+        public IActionResult XoaSanPham(int maSanPham)
+        {
+            TempData["Message"] = "";
+            var chitiethoadon = db.TbChitiethoadons.Where(x => x.Masanpham == maSanPham).ToList();
+            if (chitiethoadon.Count() > 0)
+            {
+                TempData["Message"] = "Không xóa được sản phẩm này";
+                return RedirectToAction("SanPham");
+            }
+            db.Remove(db.TbSanphams.Find(maSanPham));
+            db.SaveChanges();
+            TempData["Message"] = "sản phẩm đã được xóa";
+            return RedirectToAction("SanPham");
+        }
     }
 }

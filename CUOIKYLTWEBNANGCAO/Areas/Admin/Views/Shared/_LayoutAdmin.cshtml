@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <!--them css-->
@@ -54,8 +55,8 @@
             <div class="menu-sidebar__content js-scrollbar1 ps">
                 <nav class="navbar-sidebar">
                     <ul class="list-unstyled navbar__list">
-                        <li class="active has-sub">
-                            <a class="js-arrow" href="#">
+                        <li class="has-sub">
+                            <a class="js-arrow" asp-area="Admin" asp-controller="HomeAdmin" asp-action="SanPham">
                                 <i class="fas fa-tachometer-alt"></i>Sản phẩm
                             </a>
                         </li>

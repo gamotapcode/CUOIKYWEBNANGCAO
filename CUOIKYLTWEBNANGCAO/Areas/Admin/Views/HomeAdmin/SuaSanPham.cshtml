@@ -1,18 +1,19 @@
 ﻿@model CUOIKYLTWEBNANGCAO.Models.TbSanpham
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @{
-    ViewData["Title"] = "ThemSanPham";
+    ViewData["Title"] = "SuaSanPham";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h1 style="text-align:center">Thêm Sản Phẩm</h1>
+<h1>SuaSanPham</h1>
 
 <h4>TbSanpham</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form method="post" asp-action="ThemSanPham">
+        <form method="post" asp-action="SuaSanPham">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Masanpham" />
             <div class="form-group">
                 <label asp-for="Tensanpham" class="control-label"></label>
                 <input asp-for="Tensanpham" class="form-control" />
@@ -40,16 +41,17 @@
             </div>
             <div class="form-group">
                 <label asp-for="Madanhmuc" class="control-label"></label>
-                <select asp-for="Madanhmuc" class ="form-control" asp-items="ViewBag.Madanhmuc"></select>
+                <select asp-for="Madanhmuc" class="form-control" asp-items="ViewBag.Madanhmuc"></select>
+                <span asp-validation-for="Madanhmuc" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="SanPham">Back to List</a>
+    <a asp-action="Index">Back to List</a>
 </div>
 

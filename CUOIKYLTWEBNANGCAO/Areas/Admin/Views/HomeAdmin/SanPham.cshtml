@@ -8,7 +8,7 @@
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 <div class="row">
     <div class="row-timkiem">
-        <div class="flex">
+        @*<div class="flex">
             <div class="flex trang">
                 <span>Trang</span>
                 <select name="" id="data-trang" onchange="">
@@ -44,11 +44,10 @@
         </div>
 
         <div class="col-md-12">
-            <button onclick="" class="btn btn-default pull-right add-row ishover"><a asp-action="ThemSanPham"><i class="fa fa-plus"></i>&nbsp;&nbsp; Thêm loại</a></button>
-</div>
-        <div class="col-md">
-
-            <button onclick="" class="btn btn-default pull-right add-row ishover"><i class="fa fa-plus"></i>&nbsp;&nbsp; Thêm sản phẩm</button>
+            <button onclick="" class="btn btn-default pull-right add-row ishover"><i class="fa fa-plus"></i>&nbsp;&nbsp; Thêm loại</button>
+        </div>*@
+        <div class="col-md" style="flex-grow: 0">
+            <button onclick="" class="btn btn-default pull-right add-row ishover"><a asp-action="ThemSanPham"><i class="fa fa-plus"></i>&nbsp;&nbsp; Thêm sản phẩm</a></button>
         </div>
 
     </div>
@@ -107,9 +106,9 @@
                             @Html.DisplayFor(modelItem => item.Madanhmuc)
                         </td>
                         <td>
-                            <a asp-action="Edit" asp-route-id="@item.Masanpham">Edit</a> |
+                            <a asp-action="SuaSanPham" asp-route-maSanPham="@item.Masanpham">Edit</a> |
                             <a asp-action="Details" asp-route-id="@item.Masanpham">Details</a> |
-                            <a asp-action="Delete" asp-route-id="@item.Masanpham">Delete</a>
+                            <a asp-action="XoaSanPham" asp-route-maSanPham="@item.Masanpham">Delete</a>
                         </td>
                     </tr>
                 }
