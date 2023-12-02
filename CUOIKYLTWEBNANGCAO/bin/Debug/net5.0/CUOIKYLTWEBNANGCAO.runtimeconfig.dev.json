@@ -1,8 +1,8 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
-      "C:\\Users\\FPTSHOP\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\FPTSHOP\\.nuget\\packages"
+      "C:\\Users\\PhucDo\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\PhucDo\\.nuget\\packages"
     ]
   }
 }

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\ĐẠI HỌC\\Năm 3\\BCCKTKWNC\\CUOIKYWEBNANGCAO-Yen\\CUOIKYLTWEBNANGCAO\\CUOIKYLTWEBNANGCAO.csproj": {}
+    "C:\\Users\\PhucDo\\Desktop\\CUOIKYWEBNANGCAO\\CUOIKYLTWEBNANGCAO\\CUOIKYLTWEBNANGCAO.csproj": {}
   },
   "projects": {
-    "D:\\ĐẠI HỌC\\Năm 3\\BCCKTKWNC\\CUOIKYWEBNANGCAO-Yen\\CUOIKYLTWEBNANGCAO\\CUOIKYLTWEBNANGCAO.csproj": {
+    "C:\\Users\\PhucDo\\Desktop\\CUOIKYWEBNANGCAO\\CUOIKYLTWEBNANGCAO\\CUOIKYLTWEBNANGCAO.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ĐẠI HỌC\\Năm 3\\BCCKTKWNC\\CUOIKYWEBNANGCAO-Yen\\CUOIKYLTWEBNANGCAO\\CUOIKYLTWEBNANGCAO.csproj",
+        "projectUniqueName": "C:\\Users\\PhucDo\\Desktop\\CUOIKYWEBNANGCAO\\CUOIKYLTWEBNANGCAO\\CUOIKYLTWEBNANGCAO.csproj",
         "projectName": "CUOIKYLTWEBNANGCAO",
-        "projectPath": "D:\\ĐẠI HỌC\\Năm 3\\BCCKTKWNC\\CUOIKYWEBNANGCAO-Yen\\CUOIKYLTWEBNANGCAO\\CUOIKYLTWEBNANGCAO.csproj",
-        "packagesPath": "C:\\Users\\FPTSHOP\\.nuget\\packages\\",
-        "outputPath": "D:\\ĐẠI HỌC\\Năm 3\\BCCKTKWNC\\CUOIKYWEBNANGCAO-Yen\\CUOIKYLTWEBNANGCAO\\obj\\",
+        "projectPath": "C:\\Users\\PhucDo\\Desktop\\CUOIKYWEBNANGCAO\\CUOIKYLTWEBNANGCAO\\CUOIKYLTWEBNANGCAO.csproj",
+        "packagesPath": "C:\\Users\\PhucDo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\PhucDo\\Desktop\\CUOIKYWEBNANGCAO\\CUOIKYLTWEBNANGCAO\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\FPTSHOP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\PhucDo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -75,7 +75,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -87,7 +88,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.416\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

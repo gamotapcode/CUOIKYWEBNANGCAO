@@ -1,0 +1,20 @@
+﻿@model CUOIKYLTWEBNANGCAO.Models.CartViewModel
+@{
+    int uniqueItemCount = 0;
+    decimal totalCost = 0;
+
+    // Kiểm tra nếu giỏ hàng trống
+    if (Model != null && Model.Items != null && Model.Items.Any())
+    {
+        uniqueItemCount = Model.Items.Select(item => item.IdSanPham).Distinct().Count();
+        totalCost = Model.TongTien;
+    }
+}
+<div class="header__cart">
+    <ul>
+        <!-- Link to the cart view -->
+        <li><a href="@Url.Action("Index", "Cart")"><i class="fa fa-shopping-bag"></i> <span>@uniqueItemCount</span></a></li>
+    </ul>
+    <!-- Display total number of unique items -->
+    <div class="header__cart__price">item: <span>$@totalCost</span></div>
+</div>

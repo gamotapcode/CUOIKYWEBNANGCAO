@@ -32,6 +32,7 @@ namespace CUOIKYLTWEBNANGCAO
             var connect = Configuration.GetConnectionString("Laptrinhwebnangcao");
             services.AddDbContext<dbQUANLYBANHANGContext>(options => options.UseSqlServer(connect));
             services.AddScoped<IDanhMucRepository, DanhMucRepository>();
+            services.AddSession();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -49,7 +50,7 @@ namespace CUOIKYLTWEBNANGCAO
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            app.UseSession();
             app.UseRouting();
 
             app.UseAuthorization();
