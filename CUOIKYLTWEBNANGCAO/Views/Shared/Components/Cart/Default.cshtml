@@ -1,0 +1,10 @@
+﻿@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+@model CUOIKYLTWEBNANGCAO.ViewModels.CartViewModel;
+<div class="header__cart">
+    <ul>
+        <!-- Link to the cart view -->
+        <li><a asp-controller="Cart" asp-action="Index"><i class="fa fa-shopping-bag"></i> <span>@Model.Quantity</span></a></li>
+    </ul>
+    <!-- Display total number of unique items -->
+    <div class="header__cart__price">Total: <span>$@Model.TongTien</span></div>
+</div>

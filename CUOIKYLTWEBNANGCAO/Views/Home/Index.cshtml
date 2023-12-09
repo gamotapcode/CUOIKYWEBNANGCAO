@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Trang chủ";
+}
+@using X.PagedList.Mvc.Core;
+@model X.PagedList.IPagedList<TbSanpham>
+
+
+@foreach (var item in Model)
+{
+    @await Html.PartialAsync("PartialSanPham", item)
+}
+    <div class="product__pagination" style="flex: 0 0 100%;">
+        @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }))
+    </div>
+
+
+<style>
+    .pagination {
+        justify-content: center;
+    }
+</style>

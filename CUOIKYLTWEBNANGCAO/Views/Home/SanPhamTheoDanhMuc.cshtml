@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewData["Title"] =ViewBag.tendm;
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+
+@using X.PagedList.Mvc.Core;
+@model X.PagedList.IPagedList<TbSanpham>
+@foreach (var item in Model)
+{
+    @await Html.PartialAsync("PartialSanPham", item)
+}
+
+<div class="product__pagination" style="flex: 0 0 100%;">
+    @Html.PagedListPager(Model, page => Url.Action("sanphamtheodanhmuc", new { madm=ViewBag.madm ,page = page }))
+</div>
+<style>
+    .pagination {
+        justify-content: center;
+    }
+</style>
+
+
