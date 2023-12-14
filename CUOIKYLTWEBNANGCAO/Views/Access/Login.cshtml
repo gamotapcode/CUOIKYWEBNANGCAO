@@ -8,18 +8,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đăng nhập</title>
+    <title>Ogani - Fresh and Cool</title>
     <link rel="stylesheet" href="../LayoutSignIn_Up/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" />
 </head>
+
 <body>
+    <style>
+        .auth-image img {
+            height: 460px;
+            width: 490px;
+            margin-left: -110px;
+            margin-top: 68px;
+        }
+        input.auth-submit:hover {
+            box-shadow: 3px 3px 7px 2px #7fad39;
+        }
+
+        a.auth-btn-direct:hover {
+            box-shadow: -2px 3px 0px 0px #7FAD39;
+        }
+        h2.auth-form-title {
+            color: #7fad39;
+        }
+        input.auth-submit {
+            background: #7fad39;
+        }
+        a.auth-btn-direct {
+            border: 1px solid #7fad39;
+        }
+        .auth-wrapper a {
+            color: #7fad39;
+        }
+
+        .auth-wrapper a {
+            color: #7fad39;
+        }
+        .auth-form-outer input:focus {
+            border: 1px solid #7fad39;
+        }
+        label input[type="checkbox"] ~ i.fa.fa-square-o {
+            color: #7fad39;
+            display: inline;
+        }
+        label input[type="checkbox"]:checked ~ i.fa.fa-check-square-o {
+            color: #7fad39;
+            display: inline;
+        }
+        label:hover input[type="checkbox"] ~ i.fa {
+            color: #7fad39;
+        }
+
+        div[data-toggle="buttons"] label.active {
+            color: #7fad39;
+        }
+    </style>
     <!-- Form without bootstrap -->
     <div class="auth-wrapper">
         <div class="auth-container">
             <div class="auth-action-left">
                 <div class="auth-form-outer">
                     <h2 class="auth-form-title">
-                        Sign In
+                        Welcome Your Comeback
                     </h2>
                     <p>@TempData["SuccessMessage"]</p>
                     <div class="auth-external-container">
@@ -69,13 +119,13 @@
 
                     }
                     <div class="auth-forgot-password">
-                        <a href="#">Forfot Password</a>
+                        <a href="#">Forgot Password ?</a>
                     </div>
                 </div>
             </div>
             <div class="auth-action-right">
                 <div class="auth-image">
-                    <img src="../LayoutSignIn_Up/assets/vector.jpg" alt="login">
+                    <img src="../LayoutSignIn_Up/assets/login.png" alt="login">
                 </div>
             </div>
         </div>

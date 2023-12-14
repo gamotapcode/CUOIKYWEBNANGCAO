@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\TAILIEU\\CUOIKYLTWEBNANGCAO\\CUOIKYLTWEBNANGCAO\\CUOIKYLTWEBNANGCAO.csproj": {}
+    "C:\\Users\\TINH\\Source\\Repos\\CUOIKYWEBNANGCAO\\CUOIKYLTWEBNANGCAO\\CUOIKYLTWEBNANGCAO.csproj": {}
   },
   "projects": {
-    "D:\\TAILIEU\\CUOIKYLTWEBNANGCAO\\CUOIKYLTWEBNANGCAO\\CUOIKYLTWEBNANGCAO.csproj": {
+    "C:\\Users\\TINH\\Source\\Repos\\CUOIKYWEBNANGCAO\\CUOIKYLTWEBNANGCAO\\CUOIKYLTWEBNANGCAO.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\TAILIEU\\CUOIKYLTWEBNANGCAO\\CUOIKYLTWEBNANGCAO\\CUOIKYLTWEBNANGCAO.csproj",
+        "projectUniqueName": "C:\\Users\\TINH\\Source\\Repos\\CUOIKYWEBNANGCAO\\CUOIKYLTWEBNANGCAO\\CUOIKYLTWEBNANGCAO.csproj",
         "projectName": "CUOIKYLTWEBNANGCAO",
-        "projectPath": "D:\\TAILIEU\\CUOIKYLTWEBNANGCAO\\CUOIKYLTWEBNANGCAO\\CUOIKYLTWEBNANGCAO.csproj",
-        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "D:\\TAILIEU\\CUOIKYLTWEBNANGCAO\\CUOIKYLTWEBNANGCAO\\obj\\",
+        "projectPath": "C:\\Users\\TINH\\Source\\Repos\\CUOIKYWEBNANGCAO\\CUOIKYLTWEBNANGCAO\\CUOIKYLTWEBNANGCAO.csproj",
+        "packagesPath": "C:\\Users\\TINH\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\TINH\\Source\\Repos\\CUOIKYWEBNANGCAO\\CUOIKYLTWEBNANGCAO\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\TINH\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
