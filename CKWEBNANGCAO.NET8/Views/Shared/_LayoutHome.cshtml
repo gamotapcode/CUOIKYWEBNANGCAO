@@ -1,0 +1,234 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Site Metas -->
+    <title>Freshshop - Ecommerce Bootstrap 4 HTML Template</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="~/images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="~/images/apple-touch-icon.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="~/css/style.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="~/css/responsive.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="~/css/custom.css">
+
+    <style>
+        .custom-btn {
+            display: inline-block;
+            padding: 4px 16px;
+            font-size: 14px;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+            color: #fff;
+            background-color: #28a745; /* Màu xanh lá cây */
+            border: 2px solid #28a745;
+        }
+
+            .custom-btn:hover {
+                background-color: #218838; /* Màu xanh lá cây sáng hơn khi di chuột qua */
+                border-color: #218838;
+            }
+    </style>
+
+</head>
+
+<body>
+    <!-- Start Main Top -->
+    <div class="main-top">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="custom-select-box">
+                        <select id="basic" class="selectpicker show-tick form-control" data-placeholder="$ USD">
+                            <option>¥ JPY</option>
+                            <option>$ USD</option>
+                            <option>€ EUR</option>
+                        </select>
+                    </div>
+
+                    <div class="our-link">
+                        <ul>
+
+                            
+                                    @if (User.Identity.Name != null)
+                                    {
+                                <li>
+                                    <a href="#">
+                                        <i class="fas fa-grin-hearts"></i>
+                                        <span class="email">Hello: @User.Identity.Name</span>
+                                    </a>
+                                </li>
+                                    }
+                               
+
+                           
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="login-box">
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <a href="/logout" id="basic" class="custom-btn">Logout</a>
+                        }
+                        else
+                        {
+                            <a href="/login" id="basic" class="custom-btn">
+                                Login
+                            </a>
+                        }
+
+                    </div>
+                    <div class="text-slid-box">
+                        <div id="offer-box" class="carouselTicker">
+                            <ul class="offer-box">
+                                <li>
+                                    <i class="fab fa-opencart"></i> 20% off Entire Purchase Promo code: offT80
+                                </li>
+                                <li>
+                                    <i class="fab fa-opencart"></i> 50% - 80% off on Vegetables
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Main Top -->
+    <!-- Start Main Top -->
+    <header class="main-header">
+        <!-- Start Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-default bootsnav">
+            <div class="container">
+                <!-- Start Header Navigation -->
+                <div class="navbar-header">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="index.html"><img src="~/images/logo.png" class="logo" alt=""></a>
+                </div>
+                <!-- End Header Navigation -->
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbar-menu">
+                    <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
+                        <li class="nav-item active"><a class="nav-link" href="/">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/products">Shop</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/cart">Cart</a></li>
+                        <li class="nav-item"><a class="nav-link" href="checkout.html">Checkout</a></li>
+                        <li class="nav-item"><a class="nav-link" href="gallery.html">My Account</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+                <!-- Start Atribute Navigation -->
+                <div class="attr-nav">
+                    <ul>
+                        <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
+                        <li class="side-menu">
+                            @await Component.InvokeAsync("Cart")
+                        </li>
+                    </ul>
+                </div>
+                <!-- End Atribute Navigation -->
+            </div>
+            <!-- Start Side Menu -->
+            <div class="side">
+                <a href="#" class="close-side"><i class="fa fa-times"></i></a>
+                @await Component.InvokeAsync("CartDetail")
+            </div>
+            <!-- End Side Menu -->
+        </nav>
+        <!-- End Navigation -->
+    </header>
+    <!-- End Main Top -->
+    <!-- Start Top Search -->
+    <div class="top-search">
+        <div class="container">
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                <input id="searchText" type="text" class="form-control" placeholder="Search">
+                <span class="input-group-addon close-search"><i class="fa fa-times" id="clearSearch"></i></span>
+                <button id="searchButton" class="btn btn-primary">Search</button>
+            </div>
+        </div>
+    </div>
+    <!-- End Top Search -->
+    @RenderBody()
+    <!--Begin Footer-->
+    @await Html.PartialAsync("_Footer")
+    <!-- End Footer  -->
+    <!-- Start copyright  -->
+    @await Html.PartialAsync("_Copyright")
+    <!-- End copyright  -->
+
+
+    <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
+
+    <!-- ALL JS FILES -->
+
+    <script src="~/js/jquery-3.2.1.min.js"></script>
+    <script src="~/js/popper.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <!-- ALL PLUGINS -->
+    <script src="~/js/jquery.superslides.min.js"></script>
+    <script src="~/js/bootstrap-select.js"></script>
+    <script src="~/js/inewsticker.js"></script>
+    <script src="~/js/bootsnav.js"></script>
+    <script src="~/js/images-loded.min.js"></script>
+    <script src="~/js/isotope.min.js"></script>
+    <script src="~/js/owl.carousel.min.js"></script>
+    <script src="~/js/baguetteBox.min.js"></script>
+    <script src="~/js/form-validator.min.js"></script>
+    <script src="~/js/contact-form-script.js"></script>
+    <script src="~/js/custom.js"></script>
+    <script src="~/js/jquery-ui.js"></script>
+    <script src="~/js/jquery.nicescroll.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#searchButton").click(function () {
+                let url = '/products?searchString=' + $("#searchText").val();
+                window.location.href = url;
+            });
+        });
+
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var currentPath = window.location.pathname;
+
+            // Loại bỏ lớp "active" từ tất cả các mục
+            var navItems = document.querySelectorAll('.nav-item');
+            navItems.forEach(function (item) {
+                item.classList.remove('active');
+            });
+
+            // Tìm và thêm lớp "active" cho mục có đường dẫn trùng khớp
+            var activeNavItem = document.querySelector('.nav-item a[href="' + currentPath + '"]');
+            if (activeNavItem) {
+                activeNavItem.parentElement.classList.add('active');
+            }
+        });
+    </script>
+    @RenderSection("Scripts", required: false)
+</body>
+
+</html>

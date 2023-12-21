@@ -1,0 +1,13 @@
+﻿@model IEnumerable<CKWEBNANGCAO.NET8.ViewModels.CategoriesSP>
+<div class="filter-sidebar-left">
+    <div class="title-left">
+        <h3>Categories</h3>
+    </div>
+    <div class="list-group list-group-collapse list-group-sm list-group-tree" id="list-group-men" >
+        <a asp-controller="Products" asp-action="Index" style="font-size:20px;" class="list-group-item list-group-item-action">All<small class="text-muted">(@Model.Sum(m=>m.Soluong)</>) </small></a>
+        @foreach(var item in Model)
+        {
+            <a asp-controller="Products" asp-action="Index" asp-route-madm="@item.Madm" style="font-size:20px;" class="list-group-item list-group-item-action">@item.Tendm<small class="text-muted">(@item.Soluong) </small></a>
+        }
+    </div>
+</div>

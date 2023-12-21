@@ -1,0 +1,56 @@
+﻿@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+@model IEnumerable<CKWEBNANGCAO.NET8.Models.Party>
+
+@{
+    ViewData["Title"] = "Quản lý Tài Khoản";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>Danh sách tài khoản</h1>
+
+<p>
+    <a asp-action="Create">Thêm mới</a>
+</p>
+<p class="text-success">@TempData["SuccessMessage"]</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Loại Tài Khoản
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Username)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Password)
+            </th>
+            <th>
+                LastName
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TypeOfParty)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Username)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Password)
+                </td>
+                <td>
+                    @(item.Person != null ? Html.DisplayFor(modelItem => item.Person.CurrentLastName) : null)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-PartyId="@item.PartyId">Sửa</a> |
+                    <a asp-action="Delete" asp-route-PartyId="@item.PartyId">Xoá</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

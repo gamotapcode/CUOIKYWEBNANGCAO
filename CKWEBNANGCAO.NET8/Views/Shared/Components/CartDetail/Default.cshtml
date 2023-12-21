@@ -1,0 +1,20 @@
+﻿@using CKWEBNANGCAO.NET8.ViewModels;
+@model List<CartItem>
+
+<li class="cart-box">
+    <ul class="cart-list">
+        @foreach(var item in Model)
+        {
+            <li>
+                <a href="#" class="photo"><img src="../ImageProducts/@item.Hinhanh" class="cart-thumb" alt="" /></a>
+                <h6><a href="#">@item.TenSanPham </a></h6>
+                <p><span>@item.SoLuong</span>x - <span class="price">$@item.DonGia</span></p>
+            </li>
+        }
+        
+        <li class="total">
+            <a href="/Cart" class="btn btn-default hvr-hover btn-cart">VIEW CART</a>
+            <span class="float-right"><strong>Total</strong>: $@Model.Sum(p=>p.ThanhTien)</span>
+        </li>
+    </ul>
+</li>

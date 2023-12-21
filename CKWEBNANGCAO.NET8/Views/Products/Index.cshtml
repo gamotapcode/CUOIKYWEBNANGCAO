@@ -1,0 +1,136 @@
+﻿@using X.PagedList.Mvc.Core
+@{
+    ViewData["Title"] = "Home Page";
+    Layout = "_LayoutProduct";
+}
+@model X.PagedList.IPagedList<TbSanpham>
+
+<!-- Start All Title Box -->
+@section BreadCum{
+    <div class="all-title-box">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>Shop</h2>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">Shop</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+<!-- End All Title Box -->
+<div role="tabpanel" class="tab-pane fade show active" id="grid-view">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                <div class="products-single fix">
+                    <div class="box-img-hover">
+                        <div class="type-lb">
+                            <p class="sale">@item.MadanhmucNavigation.Tendanhmuc</p>
+                        </div>
+                        <a href="/productdetails?masp=@item.Masanpham">
+                            <img src="~/ImageProducts/@item.Hinhanh" width="100%" style="height: 300px;" class="img-fluid" alt="Image" title="@item.Hinhanh">
+                        </a>
+                        <div class="mask-icon">
+                            <ul>
+                                <li><a href="/productdetails?masp=@item.Masanpham" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
+                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                            </ul>
+                            <a class="cart" asp-controller="Cart" asp-action="AddtoCart" asp-route-masp="@item.Masanpham">Add to Cart</a>
+                        </div>
+                    </div>
+                    <div class="why-text">
+                        <h4 style="text-align:center">@item.Tensanpham</h4>
+                        <h5 style=" display: flex;
+    justify-content: center;">
+                            $@item.Dongia
+                        </h5>
+                    </div>
+                </div>
+            </div>
+        }
+
+
+    </div>
+</div>
+<div role="tabpanel" class="tab-pane fade" id="list-view">
+    @foreach (var item in Model)
+    {
+        <div class="list-view-box">
+            <div class="row">
+                <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                    <div class="products-single fix">
+                        <div class="box-img-hover">
+                            <div class="type-lb">
+                                <p class="new">@item.MadanhmucNavigation.Tendanhmuc</p>
+                            </div>
+                            <img src="~/images/@item.Hinhanh" class="img-fluid" alt="Image">
+                            <div class="mask-icon">
+                                <ul>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-8 col-xl-8">
+                    <div class="why-text full-width">
+                        <h4>@item.Tensanpham</h4>
+                        <h5> @* <del>$ 60.00</del> *@ $@item.Dongia</h5>
+                        <p>
+                            @item.Mota
+                        </p>
+                        <a class="cart" asp-controller="Cart" asp-action="AddtoCart" asp-route-masp="@item.Masanpham">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+<div class="product__pagination">
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }))
+</div>
+
+
+
+    <style >
+    .pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        list-style: none;
+
+    }
+
+    .pagination li {
+        margin: 0 5px;
+        display: inline-block;
+    }
+
+    .pagination a {
+        text-decoration: none;
+        padding: 8px 12px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        color: #333;
+        transition: background-color 0.3s;
+    }
+
+        .pagination a:hover {
+            background-color: #ddd;
+        }
+
+    .pagination .active a {
+        background-color: #4CAF50;
+        color: white;
+    }
+</style>
+

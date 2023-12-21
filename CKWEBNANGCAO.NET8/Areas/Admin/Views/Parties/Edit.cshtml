@@ -1,0 +1,51 @@
+﻿@model CKWEBNANGCAO.NET8.Models.Party
+@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Sửa tài khoản";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>Sửa Tài Khoản</h1>
+
+<hr />
+<p class="text-danger">@TempData["ErrorMessage"]</p>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="PartyId" />
+            <div class="form-group">
+                <label class="control-label">Loại tài khoản</label>
+                <select asp-for="TypeOfParty" class="form-control" required>
+                    <option value="1">Admin</option>
+                    <option value="2">Khách hàng</option>
+                </select>
+                <span asp-validation-for="TypeOfParty" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Person.CurrentLastName" class="control-label">Last Name</label>
+                <input asp-for="Person.CurrentLastName" class="form-control" />
+                <span asp-validation-for="Person.CurrentLastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Username" class="control-label"></label>
+                <input asp-for="Username" class="form-control" />
+                <span asp-validation-for="Username" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <input type="submit" value="Lưu" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Trở về</a>
+</div>
+

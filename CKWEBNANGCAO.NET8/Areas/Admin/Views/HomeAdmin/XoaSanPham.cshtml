@@ -1,0 +1,58 @@
+﻿@model CKWEBNANGCAO.NET8.Models.TbSanpham
+@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Delete Product";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>Delete Product</h1>
+
+<h4>Do you really want to delete it?</h4>
+<p class="text-danger">@TempData["Messages"]</p>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Product Name
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Tensanpham)
+        </dd>
+        <dt class="col-sm-2">
+            Price
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Dongia)
+        </dd>
+        <dt class="col-sm-2">
+            Quantity
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Soluong)
+        </dd>
+        <dt class="col-sm-2">
+            Product Image
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Hinhanh)
+        </dd>
+        <dt class="col-sm-2">
+           Description
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Mota)
+        </dd>
+        <dt class="col-sm-2">
+            Category
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MadanhmucNavigation.Tendanhmuc)
+        </dd>
+    </dl>
+
+    <form asp-action="XoaSanPham">
+        <input type="hidden" asp-for="Masanpham" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to list</a>
+    </form>
+</div>

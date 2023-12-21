@@ -1,0 +1,154 @@
+﻿@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = null;
+}
+@model Party
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ogani - Fresh and Cool</title>
+    <link rel="stylesheet" href="../LayoutSignIn_Up/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" />
+</head>
+
+<body>
+    <style>
+        .auth-image img {
+            height: 460px;
+            width: 490px;
+            margin-left: -110px;
+            margin-top: 68px;
+        }
+
+        input.auth-submit:hover {
+            box-shadow: 3px 3px 7px 2px #7fad39;
+        }
+
+        a.auth-btn-direct:hover {
+            box-shadow: -2px 3px 0px 0px #7FAD39;
+        }
+
+        h2.auth-form-title {
+            color: #7fad39;
+        }
+
+        input.auth-submit {
+            background: #7fad39;
+        }
+
+        a.auth-btn-direct {
+            border: 1px solid #7fad39;
+        }
+
+        .auth-wrapper a {
+            color: #7fad39;
+        }
+
+        .auth-wrapper a {
+            color: #7fad39;
+        }
+
+        .auth-form-outer input:focus {
+            border: 1px solid #7fad39;
+        }
+
+        label input[type="checkbox"] ~ i.fa.fa-square-o {
+            color: #7fad39;
+            display: inline;
+        }
+
+        label input[type="checkbox"]:checked ~ i.fa.fa-check-square-o {
+            color: #7fad39;
+            display: inline;
+        }
+
+        label:hover input[type="checkbox"] ~ i.fa {
+            color: #7fad39;
+        }
+
+        div[data-toggle="buttons"] label.active {
+            color: #7fad39;
+        }
+
+        .text-danger {
+            color: #fff;
+            background-color: #dc3545;
+        }
+
+        .text-success {
+            color: #fff;
+            background-color: #7fad39;
+        }
+    </style>
+    <!-- Form without bootstrap -->
+    <div class="auth-wrapper">
+        <div class="auth-container">
+            <div class="auth-action-left">
+                <div class="auth-form-outer">
+                    <h2 class="auth-form-title">
+                        Welcome Your Comeback
+                    </h2>
+                    <p class="text-success">@TempData["SuccessMessage"]</p>
+                    <div class="auth-external-container">
+                        <div class="auth-external-list">
+                            <ul>
+                                <li><a href="#"><i class="fa fa-google"></i></a></li>
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                            </ul>
+                        </div>
+                        <p class="auth-sgt">or sign in with:</p>
+                    </div>
+
+                    @using (Html.BeginForm("Login", "Access", new { returnUrl = ViewBag.ReturnUrl }, FormMethod.Post))
+                    {
+
+                        @Html.TextBoxFor(x => x.Username, new
+                            {
+                                @class = "auth-form-input",
+                                placeholder = "Username",
+                                required = "required",
+                                autofocus = "autofocus"
+                            })
+
+                        <div class="input-icon">
+                            @Html.TextBoxFor(x => x.Password, new
+                                {
+                                    @class = "auth-form-input",
+                                    type = "password",
+                                    placeholder = "Password",
+                                    required = "required",
+                                    autofocus = "autofocus"
+                                })
+                            <i class="fa fa-eye show-password" onclick="togglePasswordVisibility()"></i>
+                        </div>
+                        <label class="btn active">
+                            <input type="checkbox" name='email1' checked>
+                            <i class="fa fa-square-o"></i><i class="fa fa-check-square-o"></i>
+                            <span> Remember password.</span>
+                        </label>
+                        <div class="footer-action">
+                            <input type="submit" value="Login" class="auth-submit">
+                            <a asp-controller="Access" asp-action="Signup" class="auth-btn-direct">Sign Up</a>
+                        </div>
+                        <p class="text-danger">@TempData["Error"]</p>
+
+                    }
+                    <div class="auth-forgot-password">
+                        <a href="#">Forgot Password ?</a>
+                    </div>
+                </div>
+            </div>
+            <div class="auth-action-right">
+                <div class="auth-image">
+                    <img src="../LayoutSignIn_Up/assets/login.png" alt="login">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../LayoutSignIn_Up/js/common.js"></script>
+</body>
+</html>
